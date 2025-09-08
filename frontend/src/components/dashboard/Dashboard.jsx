@@ -39,7 +39,7 @@ function Dashboard() {
   useEffect(() => {
     if (!curUser?.phone) return;
 
-    socket = io("http://localhost:5000");
+    socket = io("https://msgx.onrender.com");
     socket.emit("join", curUser.phone);
 
     socket.on("receiveMessage", (msg) => {

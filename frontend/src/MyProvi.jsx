@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 export let MyCont = createContext();
 
 export let MyProvi = ({ children }) => {
-    const URL = "http://localhost:5000";
+    const URL = "https://msgx.onrender.com";
     const api = axios.create({ baseURL: URL });
     const navi = useNavigate();
     let [curUser, setCurUser] = useState('');

@@ -5,6 +5,7 @@ import { MyCont } from '../../MyProvi';
 function Login() {
     let { api, navi } = useContext(MyCont);
     let [show, setShow] = useState(false);
+    let [load,setLoad] = useState(false);
     let [form, setForm] = useState({
         phone: "",
         pwd: ""
@@ -12,8 +13,9 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
+            setLoad(true);
             let res = await api.post('/login', form);
-            alert("welcome")
+            setLoad(false);
             navi('dashboard')
             localStorage.setItem("curuser",JSON.stringify(res.data.data));
             setForm({
@@ -55,7 +57,7 @@ function Login() {
                         <div>
                             <p>Dont't have an account?<a onClick={() => navi('/signup')}>Sign up</a></p>
                         </div>
-                        <button type="submit">Login</button>
+                        <button type="submit">{load?"Loading...":"Login"}</button>
                     </form>
                 </div>
             </div>

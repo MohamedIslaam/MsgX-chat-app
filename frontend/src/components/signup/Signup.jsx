@@ -5,6 +5,7 @@ import { MyCont } from '../../MyProvi';
 function Signup() {
     let { api, navi } = useContext(MyCont);
     let [show, setShow] = useState(false);
+    let [load,setLoad] = useState(false);
     let [form, setForm] = useState({
         uname: "",
         phone: "",
@@ -13,7 +14,9 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
+            setLoad(true);
             let res = await api.post('/signup', form);
+            setLoad(false);
             alert("User created")
         } catch (error) {
             alert(error.message);
@@ -59,7 +62,7 @@ function Signup() {
                         <div>
                             <p>Already have an account?<a onClick={()=>navi('/login')}>Log in</a></p>
                         </div>
-                        <button type="submit">Sign up</button>
+                        <button type="submit">{load?"Loading...":"Sign up"}</button>
                     </form>
                 </div>
             </div>
