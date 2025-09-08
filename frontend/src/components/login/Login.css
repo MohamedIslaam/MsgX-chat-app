@@ -1,0 +1,68 @@
+.signcont{
+    background-color: #BDF4D7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15%;
+    & .innercont{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 900px;
+        min-height: 350px;
+        gap: 20px;
+        & .contleft{
+            flex: 1;
+            min-width: 250px;
+            & img{
+                border-radius: 15px;
+                width: 100%;
+            }
+            
+        }
+        & .contrig{
+            flex: 1;
+            & form{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                font-size: 1.2rem;
+                & div{
+                    display: flex;
+                    flex-direction: column;
+                    & input{
+                        border: 0px;
+                        border-bottom: 1px solid;
+                        height: 40px;
+                        font-size: 1.2rem;
+                    }
+                }
+                & .pwd p{
+                    cursor: pointer;
+                }
+                a{
+                    text-decoration: none;
+                    margin-left: 5px;
+                }
+                button{
+                    width: 130px;
+                    padding: 10px;
+                    margin-top: 10px;
+                    cursor: pointer;
+                    border: 0px;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    background-color: rgb(30, 214, 39);
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
