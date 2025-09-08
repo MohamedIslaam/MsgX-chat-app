@@ -2,6 +2,9 @@
 
 A real-time chat application built with **React**, **Node.js**, **Express**, **MongoDB**, and **Socket.IO**. Users can sign up, log in, and chat with other registered users in real-time.
 
+## Demo link:
+http://msgx-chat-app.netlify.app/
+
 ## Features
 
 * User authentication (Signup & Login)
